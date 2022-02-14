@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="feed h-app h-x-app main_content_box">
+    <h1>Setting up your endpoint</h1>
+    <h2>Installing this endpoint</h2>
+    <p>Please follow the installation instructions in the <a href="https://github.com/capjamesg/websub">project GitHub repository</a> to find out how to install the endpoint.</p>
+    <h2>Adding head tags to your site</h2>
+    <p>To set up this endpoint, you will need to add two HTML tags to the head of every page on your site:</p>
+    <code>
+&lt;link rel="hub" href="your_hub_url"/&gt;
+    </code>
+    <code>
+&lt;link rel="self" href="web_page_url"/&gt;
+    </code>
+    <p>Please substitute the above hub href value with the actual values or your hub. The self value should be equal to the HTML page being viewed.</p>
+    <p>You will need to send a POST request to your hub every time you create new content on your site. This is necessary so that the hub can immediately notify any subscribers to a page that new content has been added.</p>
+    <h2>Subscribing to content</h2>
+    <p>Please refer to the "How to Subscribe" section of the <a href="https://indieweb.org/How_to_publish_and_consume_WebSub">IndieWeb wiki WebSub tutorial</a> for informtaion on how to subscribe to a WebSub hub.</p>
+</section>
+{% endblock %}

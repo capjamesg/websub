@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="feed h-app h-x-app main_content_box">
+    <img src="https://jamesg.blog/assets/coffeeshop.jpg" height="100" width="100" class="u-logo" alt="James sitting in a coffee shop, happily staring at a cup of coffee.">
+    <h1>Welcome to <a href="https://micropub.jamesg.blog" class="u-url p-name">James' WebSub Endpoint</a>!</h1>
+    <p>This WebSub endpoint is run by {{ config.ME }}.</p>
+    <p class="p-summary">This site lets you send WebSub notifications to subscribers when you publish new content on a page.</p>
+    <h2>What is WebSub?</h2>
+    <p>WebSub is a W3C standard that describes a way in which services can "subscribe" to pages on your site and receive notifications when you publish new content.</p>
+    <p>Using WebSub means that compatible feed readers can show your website content to those who have subscribed to your site almost immediately after you have published your content.</p>
+    <h2>How does WebSub work?</h2>
+    <p>There are a few roles you will need to know before learning how WebSub works:</p>
+    <ul>
+        <li>Hub: The server that sends notifications when content has been posted.</li>
+        <li>Client: The tool that subscribes to the server.</li>
+        <li>Website: The site that is publishing content (example: a blog)</li>
+    </ul>
+    <p>Here are the steps that must be completed for a client (example: a feed reader) to subscribe to a website (example: a blog):</p>
+    <ol>
+        <li>The client discovers your WebSub endpoint that you list on your website.</li>
+        <li>The client sends a request to "subscribe" to a page on your site (example: your home page).</li>
+        <li>The hub will verify that the request was made by the client.</li>
+        <li>Upon verification, the hub will send "fat pings" every time new content is posted on a page to which there is a subscriber. A fat ping is a notification that contains the contents of the new (or updated) web page.</li>
+    </ol>
+    <p>Consuming clients must have a unique endpoint on their site to which they receive WebSub requests from each channel. This is described in more detail in the resources linked below.</p>
+    <p>Using WebSub, the hub will send notifications to the client when your website posts new content, in real-time.</p>
+    <h2>How can I learn more about WebSub?</h2>
+    <p>The IndieWeb wiki contains information on WebSub. You will find information on the basic principles behind WebSub, how to implement WebSub, and more.</p>
+    <p>Some useful resources to look at are the following pages:</p>
+    <ul>
+        <li><a href="https://indieweb.org/WebSub">WebSub Home</a></li>
+        <li><a href="https://indieweb.org/How_to_publish_and_consume_WebSub">How to publish and consume WebSub</a></li>
+    </ul>
+    <h2>Can I host my own WebSub server?</h2>
+    <p>Yes! You can host your own WebSub endpoint. This client and server is open-sourced so you can use this one if you would like.
+        You can deploy a version of this Micropub client and server by going to <a href="https://github.com/capjamesg/websub">the project GitHub page</a> and following the instructions.</p>
+    <p>You can find other implementation examples on the <a href="https://indieweb.org/WebSub">IndieWeb wiki</a>.</p>
+    <p class="context">This WebSub Server is not open for general use. You will only be able to use this service if you deploy it on your own infrastructure.</p>
+</section>
+{% endblock %}

@@ -67,7 +67,7 @@ The following resources may help you if you are new to WebSub:
 
 ## License
 
-This project is licensed under the [MIT license](LICENSE).
+This project is licensed under the [MIT 0 license](LICENSE).
 
 ## Contributors
 
